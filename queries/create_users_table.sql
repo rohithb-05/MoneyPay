@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(20) NOT NULL,
+    last_name VARCHAR(20),
+    username VARCHAR(20) NOT NULL UNIQUE,
+    password_hashed VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

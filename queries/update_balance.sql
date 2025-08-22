@@ -1,0 +1,1 @@
+UPDATE wallet SET bal = %s, last_transaction_type = %s, last_reciever_id = %s WHERE wallet_id = %s;
