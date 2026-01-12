@@ -6,8 +6,8 @@ import os
 wallet = Flask(__name__)
 wallet.config['DATABASE'] = {
     'host': 'localhost',
-    'user': 'ashy',
-    'password': 'ipooped@123$',
+    'user': 'RB05',
+    'password': 'ro12@sql345!',
     'database': 'wallet'
 }
 wallet.secret_key = 'secret_key'
