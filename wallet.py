@@ -2,15 +2,18 @@ import mysql.connector
 from flask import Flask, render_template, request, redirect, url_for, session
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 wallet = Flask(__name__)
 wallet.config['DATABASE'] = {
-    'host': 'localhost',
-    'user': 'RB05',
-    'password': 'ro12@sql345!',
-    'database': 'wallet'
+    'host': os.environ.get('MYSQL_HOST', 'localhost'),
+    'user': os.environ.get('MYSQL_USER'),
+    'password': os.environ.get('MYSQL_PASSWORD'),
+    'database': os.environ.get('MYSQL_DB')
 }
-wallet.secret_key = 'secret_key'
+wallet.secret_key = os.environ.get('SECRET_KEY')
 
 def get_db():
     db = mysql.connector.connect(**wallet.config['DATABASE'])
