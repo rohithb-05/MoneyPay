@@ -9,6 +9,7 @@ load_dotenv()
 wallet = Flask(__name__)
 wallet.config['DATABASE'] = {
     'host': os.environ.get('MYSQL_HOST', 'localhost'),
+    'port': int(os.environ.get('MYSQL_PORT', 3306)),
     'user': os.environ.get('MYSQL_USER'),
     'password': os.environ.get('MYSQL_PASSWORD'),
     'database': os.environ.get('MYSQL_DB')
